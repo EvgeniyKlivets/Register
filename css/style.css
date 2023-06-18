@@ -26,7 +26,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    z-index: 100;
 }
 
 /*--------------------------------NAVIGSTION---------------------*/
@@ -89,23 +89,41 @@ header{
     width: 400px;
     height: 440px;
     background: transparent;
-    border: 2px solid rgba(30, 12, 144, 0.481);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(20px);
-    box-shadow: rgba(0, 0, 0, 0.733);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.733);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transform: scale();
-    transition: /*transform .5s ease,*/ height .2s ease;
-
+    transform: scale(0);
+    /*transform: scale(0);*/
+    transition: transform .5s ease, height .2s ease;
 }
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-style: 2em;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 2px;
+    cursor: pointer;
+    z-index: 1;
+}
+
 .wrapper.active{
     height: 520px;
 }
 .wrapper.active-popup{
-    transform: scale();
+    transform: scale(1);
 }
 .wrapper .form-box{
     width: 100%;
@@ -128,23 +146,7 @@ header{
     transition: transform .18s easy;
     transform: translateX(0);
 }
-.wrapper .icon-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    background: #162938;
-    font-style: 2em;
-    color: aliceblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 2px;
-    cursor: pointer;
-    z-index: 1;
-}
+
 .form-box h2{
     font-size: 2em;
     color: #162938;
@@ -214,12 +216,14 @@ header{
 .btn{
     width: 100%;
     height: 45px;
+    background: #162938;
+    border: none;
     cursor: pointer;
     outline: none;
     border-radius: 10px;
     background: rgb(39, 50, 204);
     color: beige;
-    font-weight: 500;
+    font-weight: 1em;
 }
 .login-register{
     font-size: .9em;
